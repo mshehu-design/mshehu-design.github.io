@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mustapha Website</title>
+
+  <style>
+  /* D1: Mobile responsiveness */
+@media (max-width: 600px) {
+  .card {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons button {
+    width: 100%;
+  }
+}
+  .action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      padding: 40px 15px;
+    }
+
+    .card {
+      background: white;
+      max-width: 360px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      text-align: left;
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 15px 0;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 15px 0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .whatsapp {
+      background-color: #25D366;
+    }
+
+    .call {
+      background-color: #0b5ed7;
+    }
+
+button {
+  border: none;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+ 
+    }
+    .action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+body {
+  background-color: #f5f7fa;
+}
+
+.card {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 25px 20px;
+  background: white;
+  border-radius: 18px;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.6;
+  color: #555;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+.action-buttons button {
+  width: 100%;
+  max-width: 260px;
+}
+
+.action-buttons {
+  flex-direction: column;
+}
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+/* A3: Visual polish */
+h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: #333;
+}
+
+p {
+  font-family: 'Arial', sans-serif;
+  color: #555;
+  line-height: 1.7;
+}
+
+.card {
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px 15px;
+}
+
+.action-buttons button {
+  padding: 14px 28px;
+  font-weight: 500;
+  border-radius: 30px;
+}
+
+.action-buttons button:hover {
+  cursor: pointer;
+}
+/* Container for all action buttons */
+.action-buttons {
+  display: flex;
+  gap: 12px;           /* space between buttons */
+  justify-content: center; /* center horizontally */
+  margin-bottom: 20px; /* spacing below buttons */
+  flex-wrap: wrap;     /* ensures buttons wrap on small screens */
+}
+
+/* WhatsApp button */
+button.whatsapp {
+  background-color: #25D366; /* green */
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Call button */
+button.call {
+  background-color: #007bff; /* blue */
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Enter / See Services button */
+button.enter {
+  background-color: #FFA500; /* orange */
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for all buttons */
+button.whatsapp:hover,
+button.call:hover,
+button.enter:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  opacity: 0.9;
+  cursor: pointer;
+}
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* makes it circular */
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+}
+.name {
+  font-weight: 700;        /* makes it bold but classy */
+  font-size: 1.8rem;       /* slightly bigger, not too much */
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #222;             /* deep dark, professional */
+}
+  </style>
+</head>
+
+<body>
+  
+<div id="page1">
+
+  <div class="card">
+
+    <h2>What I Offer</h2>
+
+    <ul>
+      <li>Product promotion for small businesses</li>
+      <li>Simple online showcase for goods</li>
+      <li>Direct customer contact via WhatsApp and phone</li>
+    </ul>
+
+    <h2>Mustapha Shehu</h2>
+
+    <img src="my photo.png" alt="My Photo">
+
+<p>Helping you turn followers into customers with professional digital showcases. 
+</p>
+
+<div class="action-buttons">
+   <a href="page2.html">
+    <button class="enter">See Our Services</button>
+  </a>
+  <a href="https://wa.me/2347046505522">
+    <button class="whatsapp">WhatsApp Me</button>
+  </a>
+
+  <a href="tel:07046505522">
+    <button class="call">Call Me</button>
+  </a>
+</div>
+</div> <!-- end of Page 3 -->
+
+</body>
+</html>

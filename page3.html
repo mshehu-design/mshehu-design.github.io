@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page 3 – Explore More</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #222;
+}
+
+/* HERO */
+.hero {
+  padding: 40px 20px;
+  text-align: center;
+  background: white;
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #0a2540;
+}
+
+.hero p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.hero img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 14px;
+}
+
+/* SERVICES */
+.section {
+  padding: 40px 20px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.service-card {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+/* FLOATING TRIGGER */
+.floating-trigger {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #007bff;
+  color: white;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* FLOATING ICONS */
+.floating-icons {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+}
+
+.floating-icons.hidden {
+  display: none;
+}
+
+.floating-icons a {
+  width: 48px;
+  height: 48px;
+  background: white;
+  color: #007bff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+/* SERVICE CARDS – BASE */
+.service-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+
+  /* animation start state */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+/* ICON (STICKER) */
+.service-card i {
+  font-size: 22px;
+  color: #007bff;
+  background: #eef4ff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* TEXT */
+.service-card span {
+  font-weight: 500;
+}
+
+/* WHEN VISIBLE */
+.service-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.service-card:hover {
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+.cta-card {
+  background: linear-gradient(135deg, #ff9800, #ff5722); /* orange gradient */
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 20px;
+  margin: 40px 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.cta-card h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.cta-card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.cta-card button {
+  background: white;
+  color: #ff5722;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+.hero {
+  background: linear-gradient(180deg, #f4f8ff, #ffffff);
+  padding: 20px;           /* smaller padding to tighten */
+  text-align: center;
+  display: inline-block;    /* container hugs content width */
+  border-radius: 16px;      /* optional, soft corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* optional, subtle depth */
+}
+.hero-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto 20px auto; /* top 40px, bottom 20px */
+}
+.hero {
+  padding: 20px 30px; /* horizontal padding for headline alignment */
+}
+.section {
+  padding: 30px 20px;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.service-card {
+  display: flex;
+  gap: 15px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-card img {
+  width: 60px;   /* size of your service icon image */
+  height: 60px;
+  object-fit: contain;
+}
+
+.service-text h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  color: #0a2540;
+}
+
+.service-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Mobile first: services stacked */
+@media (min-width: 600px) {
+  .services {
+    grid-template-columns: 1fr 1fr;  /* 2 per row on bigger screens */
+  }
+}
+
+@media (min-width: 900px) {
+  .services {
+    grid-template-columns: repeat(4, 1fr); /* 4 in a row on large screens */
+  }
+
+  .service-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+}
+/* ===== Accordion Services ===== */
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0a2540;
+}
+
+.service-header i {
+  font-size: 20px;
+  color: #007bff;
+}
+
+/* Hidden content initially */
+.service-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 16px;
+}
+
+.service-content img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 14px;
+  margin: 10px 0;
+}
+
+.service-content p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.services {
+  padding: 40px 20px;
+  background: #e9f7fc;
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* CARD ITSELF */
+.service-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 18px 22px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+
+  text-decoration: none;
+  color: #0a58ca;
+
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease,
+              background 0.3s ease;
+}
+
+/* ICON */
+.service-card .icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #dff1ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+
+  transition: background 0.3s ease;
+}
+
+/* 🔥 ONLY THIS CARD REACTS */
+.service-card:hover {
+  transform: translateY(-4px);
+  background: #ffffff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* ICON REACTS ONLY WITH ITS CARD */
+.service-card:hover .icon {
+  background: #0a58ca;
+  color: #fff;
+}
+
+/* CLICK / ACTIVE STATE (MOBILE) */
+.service-card:active {
+  transform: scale(0.97);
+}
+@media (hover: hover) {
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 120, 255, 0.18);
+  }
+}
+.service-card:hover .icon {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: #fff;
+  transform: scale(1.08);
+}
+.service-card:active {
+  transform: scale(0.98);
+}
+</style>
+</head>
+
+<body>
+  
+ <div id="page3">
+
+<!-- PAGE 3 HERO -->
+<div class="hero-wrapper">
+  <div class="hero">
+    <h1>Explore More With Us</h1>
+    <p>Discover services, projects, and opportunities</p>
+    <img src="explore-more.png" alt="Explore More With Us">
+  </div>
+</div>
+
+<!-- SERVICES SECTION (Accordion Style) -->
+<section class="services">
+  <h2>Our Services</h2>
+
+  <div class="services-list">
+
+    <a href="web-design.html" class="service-card">
+      <div class="icon">💻</div>
+      <span>Web Design</span>
+    </a>
+
+    <a href="brand-identity.html" class="service-card">
+      <div class="icon">🎨</div>
+      <span>Brand Identity</span>
+    </a>
+
+    <a href="ui-ux.html" class="service-card">
+      <div class="icon">📐</div>
+      <span>UI / UX</span>
+    </a>
+
+    <a href="consultation.html" class="service-card">
+      <div class="icon">💬</div>
+      <span>Consultation</span>
+    </a>
+
+  </div>
+</section>
+    
+</div>
+<!-- CTA CARD -->
+<div class="cta-card">
+  <h2>Let’s Build Something Meaningful</h2>
+  <p>Simple solutions, real impact. Explore more and see what we can do together.</p>
+  <a href="page2.html"><button>Back to Services</button></a>
+  
+</div>
+
+<footer>
+  © 2026 Mustapha Shehu
+</footer>
+<!-- Three-dash trigger -->
+<div class="floating-trigger">☰</div>
+
+<!-- Floating menu icons -->
+<div class="floating-icons hidden">
+  <a href="inspiration.html"><i class="fa-solid fa-lightbulb"></i></a> <!-- Inspirations -->
+  <a href="contact.html"><i class="fa-solid fa-user"></i></a>           <!-- Contact -->
+  <a href="index.html"><i class="fa-solid fa-arrow-left"></i></a>        <!-- Back to free page 1 -->
+</div>
+<script>
+const trigger = document.querySelector('.floating-trigger');
+const icons = document.querySelector('.floating-icons');
+
+trigger.addEventListener('click', () => {
+  icons.classList.toggle('hidden');
+});
+</script>
+<script>
+  const serviceCards = document.querySelectorAll('.service-card');
+
+  const revealServices = () => {
+    const triggerPoint = window.innerHeight * 0.85;
+
+    serviceCards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+
+      if (cardTop < triggerPoint) {
+        card.classList.add('show');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealServices);
+  revealServices(); // run once on load
+</script>
+<script>
+  const cards = document.querySelectorAll('.service-card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Remove "selected" from all cards
+      cards.forEach(c => c.classList.remove('selected'));
+      // Add "selected" to the clicked card
+      card.classList.add('selected');
+    });
+  });
+</script>
+<script>
+const cards = document.querySelectorAll('.service-card');
+
+cards.forEach(card => {
+  card.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevents parent layout from reacting
+    // remove "selected" from all cards
+    cards.forEach(c => c.classList.remove('selected'));
+    // add "selected" to clicked card
+    card.classList.add('selected');
+  });
+});
+</script>
+
+</body>
+</html>
